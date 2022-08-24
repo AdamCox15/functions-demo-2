@@ -79,20 +79,46 @@ const applyFlatRateDiscount = (product, discount) => {
     product.displayPrice = product.basePrice - discount;
 }
 
-const applyDiscount = (arr, callbackName, discount) => {
+const applyPercentageDiscount = (product, discount) => {
+    product.displayPrice = product.basePrice * (1 - discount);
+} 
+
+const applyDiscount = (arr, discount, callbackName) => {
     arr.forEach((product) => callbackName(product, discount));
 }
 
-applyDiscount(catProducts, applyFlatRateDiscount, 2);
+//applyDiscount(catProducts, 2, applyFlatRateDiscount);
 
-console.log(catProducts);
+applyDiscount(dogProducts, .1, applyPercentageDiscount);
+
+//console.log(dogProducts);
+//console.log(catProducts);
 ////////////////////////
 ////// SANDWICHES //////
 ////////////////////////
 
 // CODE HERE
+const makeSandwich = (bread) => {
+    return (ingredients) => {
+        let order = `You ordered a ${bread} bread sandwich with `;
+        for (let i = 0; i < ingredients.length; i++) {
 
+            if (i === ingredients.length - 1 && i !== 0) {
+                order += `and ${ingredients[i]}.`
+            } else if (ingredients.length === 1) {
+                order += `${ingredients[i]}.`
+            } else {
+                order += `${ingredients[i]}, `
+            }
+            }
+    
+            return order
 
+    }
+}
+
+const makeWheatSandwich = makeSandwich('wheat');
+//console.log(makeWheatSandwich(['cheese', 'onions', 'ham']));
 
 ////////////////////////////////////
 ////// COPY AND CHANGE ARRAYS //////
