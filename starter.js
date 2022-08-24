@@ -268,7 +268,8 @@ const productOfArray = numbers => {
 }
 
 // CODE HERE
-console.log(productOfArray(numsToReduce));
+
+//console.log(productOfArray(numsToReduce));
 
 // call productOfArray passing in numsToReduce
 
@@ -299,4 +300,6 @@ const expenses = [
     }
 ]
 
-//const remaining // = expenses.reduce(//callback, //initial value)
+const remaining  = expenses.reduce((totalValue, current) => totalValue - current.amount, budget);
+
+console.log(remaining);
