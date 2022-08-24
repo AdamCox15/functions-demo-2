@@ -183,7 +183,9 @@ const copyArrToSnakeCase = arr => {
 
 const colors = ['red', 'blue', 'yellow', 'green', 'orange']
 
-//const mappedColors // = colors.map()
+const mappedColors  = colors.map((element) =>  'pink');
+
+//console.log(mappedColors);
 
 /*
     Edit the formalGreeting function and use the built in .map method 
@@ -193,14 +195,15 @@ const colors = ['red', 'blue', 'yellow', 'green', 'orange']
     Make sure to use arrow functions combined with the map method    
 */
 
-const formalNames = ['Bernard', 'Elizabeth', 'Conrad', 'Mary Margaret']
+const formalNames = ['Bernard', 'Elizabeth', 'Conrad', 'Mary Margaret', 'Tuukka', 'Dekker', 'Rook']
 
-const formalGreeting = names => {
-    // CODE HERE
+const formalGreeting = (names) => {
+    return names.map((elem) => `Hello, ${elem}!`)
 }
 
 // Call formalGreeting passing in the formalNames array
 
+//console.log(formalGreeting(formalNames));
 
 //// FILTER ////
 
@@ -211,7 +214,9 @@ const formalGreeting = names => {
 
 const places = ['Binghampton', 'Albany', 'New York', 'Ithaca', 'Auburn', 'Rochester', 'Buffalo']
 
-//const placesThatStartWithA // = places.filter()
+const placesThatStartWithA  = places.filter((place) => place[0] === 'A');
+
+//console.log(placesThatStartWithA);
 
 
 /*
@@ -237,7 +242,11 @@ let jobs = [
 // Do not edit the code above.
 
 // CODE HERE
+const identifier = (arr) => {
+    return arr.filter((job) => job.programmer);
+}
 
+//console.log(identifier(jobs));
 // call the function passing in the jobs array
 
 
@@ -255,10 +264,11 @@ const numsToReduce = [43, 7, 24, 79, 290]
 
 const productOfArray = numbers => {
     // Code here
+    return numbers.reduce((accumulator, currentValues) => accumulator + currentValues);
 }
 
 // CODE HERE
-
+console.log(productOfArray(numsToReduce));
 
 // call productOfArray passing in numsToReduce
 
